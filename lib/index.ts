@@ -2,6 +2,8 @@ import keccak from 'keccak';
 import { Memory } from './utils/memory';
 import { encrypted } from './interface/encrypted.interface';
 import { decrypted } from './interface/decypted.interface';
+import { solidityPacked } from 'ethers';
+import { randomBytes } from 'crypto';
 
 const keccak256 = (data: Buffer) => {
   return keccak('keccak256').update(data).digest();
@@ -66,14 +68,20 @@ export type Encrypted = encrypted;
 export type Decrypted = decrypted;
 
 export const encryptFromString = (data: string, key: string): Encrypted => {
+  const randomHash = `0x${randomBytes(32).toString('hex')}`;
+  const hashingKey = keccak256(
+    Buffer.from(
+      solidityPacked(['bytes32', 'string'], [randomHash, key]),
+      'hex',
+    ),
+  );
   const dataProcess = Buffer.from(data, 'utf-8');
-  const keyProcess = Buffer.from(key, 'utf-8');
-  const encrypted = encryptDecrypt(dataProcess, keyProcess);
+  const encrypted = encryptDecrypt(dataProcess, hashingKey);
 
   return {
     original_data_hex: `0x${dataProcess.toString('hex')}`,
     encrypted_data_hex: `0x${encrypted.toString('hex')}`,
-    encrypted_data_key_hex: `0x${keyProcess.toString('hex')}`,
+    encrypted_data_key_hex: `0x${hashingKey.toString('hex')}`,
   };
 };
 
