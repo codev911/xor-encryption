@@ -13,6 +13,7 @@
   "scripts": {
     "start": "tsx ./lib/index.ts",
     "test": "jest",
+    "test:all": "jest && cd solidity-example && npm run test && cd ..",
     "build": "rimraf dist && tsup && copyfiles -f ./solidity-example/contracts/libs/XOREncryption.sol ./dist/contracts",
     "format": "prettier --write \"solidity-example/contracts/**/*.sol\" \"solidity-example/test/**/*.ts\" \"solidity-example/ignition/**/*.ts\" \"tests/**/*.ts\" \"lib/**/*.ts\""
   },
