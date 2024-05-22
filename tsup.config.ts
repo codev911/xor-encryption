@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["lib/index.ts","chain/list.chain.ts"],
+  entry: ["lib/index.ts","lib/utils/memory.ts"],
   format: ["cjs", "esm", "iife"],
   dts: true,
   minify: true,
