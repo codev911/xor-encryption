@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "rootDir": ".",
+		"sourceMap": true,
+		"declaration": true,
+		"declarationDir": "dist",
+		"moduleResolution": "Node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"importHelpers": true,
+		"target": "ES2015",
+		"module": "ESNext",
+		"lib": ["ES2020", "dom"],
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"baseUrl": ".",
+		"types": [
+			"node",
+			"jest",
+			"mocha"
+		]
+	},
+	"include": ["lib/*", "lib/**/*"],
+	"exclude": ["node_modules"],
+}
