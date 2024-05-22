@@ -1,6 +1,6 @@
 {
   "name": "xor-encryption",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Encrypt and decrypt string data using the XOR encryption method to make it easier.",
   "author": "codev911",
   "main": "./dist/index.js",
@@ -12,13 +12,16 @@
   "license": "MIT",
   "scripts": {
     "start": "tsx ./lib/index.ts",
+    "install:solidity": "cd solidity-example && npm install && cd ..",
     "test": "jest",
     "test:all": "jest && cd solidity-example && npm run test && cd ..",
     "build": "rimraf dist && tsup && copyfiles -f ./solidity-example/contracts/libs/XOREncryption.sol ./dist/contracts",
     "format": "prettier --write \"solidity-example/contracts/**/*.sol\" \"solidity-example/test/**/*.ts\" \"solidity-example/ignition/**/*.ts\" \"tests/**/*.ts\" \"lib/**/*.ts\""
   },
   "dependencies": {
-    "keccak": "^3.0.4"
+    "keccak": "^3.0.4",
+    "crypto": "^1.0.1",
+    "ethers": "^6.12.1"
   },
   "devDependencies": {
     "@swc/core": "^1.5.7",
@@ -28,8 +31,6 @@
     "@types/mocha": ">=9.1.0",
     "@types/node": ">=18.0.0",
     "copyfiles": "^2.4.1",
-    "crypto": "^1.0.1",
-    "ethers": "^6.12.1",
     "hardhat": "^2.14.0",
     "jest": "^29.7.0",
     "nodemon": "^3.1.0",

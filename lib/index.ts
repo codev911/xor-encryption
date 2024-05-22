@@ -1,9 +1,9 @@
 import keccak from 'keccak';
+import { solidityPackedKeccak256 } from 'ethers';
+import { randomBytes } from 'crypto';
 import { Memory } from './utils/memory';
 import { encrypted } from './interface/encrypted.interface';
 import { decrypted } from './interface/decypted.interface';
-import { solidityPackedKeccak256 } from 'ethers';
-import { randomBytes } from 'crypto';
 
 const keccak256 = (data: Buffer) => {
   return keccak('keccak256').update(data).digest();
