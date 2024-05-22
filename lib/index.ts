@@ -65,7 +65,6 @@ const encryptDecrypt = (data: any, key: any) => {
 export type Encrypted = encrypted;
 export type Decrypted = decrypted;
 
-
 export const encryptFromString = (data: string, key: string): Encrypted => {
   const dataProcess = Buffer.from(data, 'utf-8');
   const keyProcess = Buffer.from(key, 'utf-8');
@@ -75,16 +74,16 @@ export const encryptFromString = (data: string, key: string): Encrypted => {
     original_data_hex: `0x${dataProcess.toString('hex')}`,
     encrypted_data_hex: `0x${encrypted.toString('hex')}`,
     encrypted_data_key_hex: `0x${keyProcess.toString('hex')}`,
-  }
-}
+  };
+};
 
 export const decryptFromHex = (dataHex: string, keyHex: string): Decrypted => {
-  const dataProcess = Buffer.from(dataHex.replace('0x',''), 'hex');
-  const keyProcess = Buffer.from(keyHex.replace('0x',''), 'hex');
+  const dataProcess = Buffer.from(dataHex.replace('0x', ''), 'hex');
+  const keyProcess = Buffer.from(keyHex.replace('0x', ''), 'hex');
   const decrypted = encryptDecrypt(dataProcess, keyProcess);
 
   return {
     decrypted_data_hex: `0x${decrypted.toString('hex')}`,
     decrypted_data: decrypted.toString('utf-8'),
-  }
-}
+  };
+};

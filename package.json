@@ -15,7 +15,7 @@
     "start": "tsx ./lib/index.ts",
     "test": "jest",
     "build": "rimraf dist && tsup",
-    "format": "prettier --write \"solidity-example/contracts/**/*.sol\" \"solidity-example/test/**/*.ts\" \"solidity-example/ignition/**/*.ts\" \"test/**/*.ts\" \"lib/**/*.ts\""
+    "format": "prettier --write \"solidity-example/contracts/**/*.sol\" \"solidity-example/test/**/*.ts\" \"solidity-example/ignition/**/*.ts\" \"tests/**/*.ts\" \"lib/**/*.ts\""
   },
   "dependencies": {
     "keccak": "^3.0.4"
