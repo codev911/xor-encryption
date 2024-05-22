@@ -1,6 +1,6 @@
 {
   "name": "xor-encryption",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Encrypt and decrypt string data using the XOR encryption method to make it easier.",
   "author": "codev911",
   "main": "./dist/index.js",
