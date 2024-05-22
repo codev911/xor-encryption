@@ -42,5 +42,9 @@
     "tsup": "^8.0.2",
     "tsx": "^4.10.5",
     "typescript": ">=4.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codev911/xor-encryption"
   }
 }
