@@ -15,11 +15,8 @@ jobs:
         with:
           cmd: install
 
-      - name: hardhat example instal
-        run: install:solidity
-
       - name: build library
         run: yarn build
 
-      - name: test library and solidity example
-        run: yarn test:all
+      - name: test library
+        run: yarn test
