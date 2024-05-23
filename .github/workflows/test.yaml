@@ -1,0 +1,25 @@
+name: XOREncryption Test Runner
+on:
+  push:
+    branches: '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+
+      - name: hardhat example instal
+        run: install:solidity
+
+      - name: build library
+        run: yarn build
+
+      - name: test library and solidity example
+        run: yarn test:all
