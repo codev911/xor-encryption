@@ -1,13 +1,14 @@
 {
   "name": "xor-encryption",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Encrypt and decrypt string data using the XOR encryption method to make it easier.",
   "author": "codev911",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "dist/contracts/*.sol"
   ],
   "license": "MIT",
   "scripts": {
